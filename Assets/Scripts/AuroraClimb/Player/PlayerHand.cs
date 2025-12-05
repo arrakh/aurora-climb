@@ -17,21 +17,40 @@ namespace AuroraClimb.Player
         [SerializeField] private float pullStrength = 5f;
         [SerializeField] private float staminaDrainDuration = 5f;
         [SerializeField] private float staminaRecoveryDuration = 8f;
+        [SerializeField] private float grabStaminaConsumption = 0.2f;
+        [SerializeField] private float grabCooldown = 0.2f;
+        [SerializeField] private float maxDistance = 3f;
 
         [Header("Animation")] 
         [SerializeField] private AnimationCurve shakeIntensityCurve;
         [SerializeField] private float shakeStrength = 0.8f;
+
+        public float Stamina => currentStamina;
+        public bool IsGrabbing => isGrabbing;
+
+        public RaycastHit Hit => latestHit;
         
         private float currentStamina = 1f;
 
         private bool isGrabbing = false;
 
+        private float currentGrabCooldown;
+
         private RaycastHit latestHit;
 
         public void Grab(RaycastHit grabTarget)
         {
+            if (currentGrabCooldown > 0f) return;
             latestHit = grabTarget;
             isGrabbing = true;
+            currentStamina -= grabStaminaConsumption;
+            currentGrabCooldown = grabCooldown;
+        }
+
+        public void ConsumeStamina(float amount)
+        {
+            currentStamina -= amount;
+            currentStamina = Mathf.Clamp01(currentStamina);
         }
 
         public void Release()
@@ -51,12 +70,24 @@ namespace AuroraClimb.Player
 
         private void Update()
         {
+            currentGrabCooldown -= Time.deltaTime;
+
+            //DistanceCheck();
+            
             StaminaUpdate();
 
             if (isGrabbing) visual.transform.position = latestHit.point;
             else visual.transform.localPosition = Vector3.zero;
 
             HandVisualUpdate();
+        }
+
+        private void DistanceCheck()
+        {
+            if (!isGrabbing) return;
+
+            var distance = Vector3.Distance(latestHit.point, pullPoint.position);
+            if (distance > maxDistance) Release();
         }
 
         private void HandVisualUpdate()

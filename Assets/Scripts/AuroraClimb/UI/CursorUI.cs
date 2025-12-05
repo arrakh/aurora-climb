@@ -19,7 +19,7 @@ namespace AuroraClimb.UI
         [SerializeField] private PlayerInteraction playerInteraction;
         [SerializeField] private TextMeshProUGUI interactText;
         [SerializeField] private Sprite normalCursor, climbableCursor;
-        
+
         private void Start()
         {
             playerInteraction.OnNewInteractable += OnNewInteractable;

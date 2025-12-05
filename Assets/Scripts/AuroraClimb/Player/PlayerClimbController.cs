@@ -12,7 +12,8 @@ namespace AuroraClimb.Player
         [SerializeField] private PlayerHand leftHand, rightHand;
         [SerializeField] private float interactionDistance;
         [SerializeField] private LayerMask climbableLayer;
-
+        [SerializeField, Range(0f, 90f)] private float maxClimbAngle = 60f;
+        
         private bool hasClimbableHit = false;
         private RaycastHit lastClimbableHit;
 
@@ -38,6 +39,15 @@ namespace AuroraClimb.Player
             Ray ray = new Ray(cam.transform.position, cam.transform.forward);
 
             if (!Physics.Raycast(ray, out var hit, interactionDistance, climbableLayer))
+            {
+                hasClimbableHit = false;
+                cursorUi.SetCursor(CursorUI.CursorType.Normal);
+                return;
+            }
+            
+            float angleFromUp = Vector3.Angle(hit.normal, Vector3.up);
+
+            if (angleFromUp < maxClimbAngle)
             {
                 hasClimbableHit = false;
                 cursorUi.SetCursor(CursorUI.CursorType.Normal);
