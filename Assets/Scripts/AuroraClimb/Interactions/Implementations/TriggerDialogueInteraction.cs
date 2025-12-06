@@ -39,6 +39,7 @@ namespace AuroraClimb.Interactions.Implementations
 
         private void OnStoryDone()
         {
+            if (!isInStory) return;
             stateController.SetIsInDialogue(false);
             isInStory = false;
         }

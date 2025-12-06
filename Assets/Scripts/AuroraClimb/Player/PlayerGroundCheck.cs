@@ -15,11 +15,13 @@ namespace AuroraClimb.Player
         {
             isGrounded = true;
             OnGroundTouched?.Invoke();
+            Debug.Log("Grounded");
         }
 
         private void OnTriggerExit(Collider other)
         {
             isGrounded = false;
+            Debug.Log("NOT Grounded");
         }
     }
 }
