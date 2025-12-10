@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace AuroraClimb.Interactions.Implementations
 {
@@ -9,10 +10,13 @@ namespace AuroraClimb.Interactions.Implementations
         [SerializeField] private Light fireLight;
         [SerializeField] private Sprite[] fireSprites;
         [SerializeField] private float fireFps = 30;
+        [SerializeField] private float flickerSpeed = 3;
         [SerializeField] private bool turnedOnAtStart = false;
 
         private int spriteIndex;
         private float animTime;
+        private float noiseProgress;
+        private float targetIntensity;
         private bool isAnimating = false;
 
         public bool CanInteract { get; private set; }
@@ -20,6 +24,8 @@ namespace AuroraClimb.Interactions.Implementations
 
         private void Start()
         {
+            targetIntensity = fireLight.intensity;
+            noiseProgress = Random.value * 100f;
             SetFireVisible(turnedOnAtStart);
         }
 
@@ -40,6 +46,10 @@ namespace AuroraClimb.Interactions.Implementations
 
         private void AnimateFireUpdate()
         {
+            noiseProgress += Time.deltaTime * flickerSpeed;
+            var noiseAlpha = Mathf.PerlinNoise1D(noiseProgress);
+            fireLight.intensity = Mathf.Lerp(targetIntensity * 0.3f, targetIntensity, noiseAlpha);
+            
             if (fireSprites == null || fireSprites.Length == 0)
                 return;
 
