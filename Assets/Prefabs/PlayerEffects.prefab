@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5043185702601807947}
   - component: {fileID: 2972101838048104290}
   - component: {fileID: 6273249288463105751}
+  - component: {fileID: 5041240142865361107}
   m_Layer: 0
   m_Name: Fog
   m_TagString: Untagged
@@ -89,6 +90,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5041240142865361107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964603733207532497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da41fedc490a4a2da72d2bfdc0c3f06a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.Player.PlayerFogBox
+  heightRange: {x: 0, y: 100}
+  fogRenderer: {fileID: 6273249288463105751}
+  fogCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.95
+      inSlope: -0.5695508
+      outSlope: -0.5695508
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.058526013
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0.101169586
+      outSlope: 0.101169586
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.052023113
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7162396456190214930
 GameObject:
   m_ObjectHideFlags: 0

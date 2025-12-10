@@ -19,6 +19,7 @@ namespace AuroraClimb.Interactions.Implementations
             storyController.OnStoryDone += OnStoryDone;
         }
 
+        public bool CanInteract => !isInStory;
         public string InteractLabel => "Talk";
 
         public void OnInteract(GameObject instigator)

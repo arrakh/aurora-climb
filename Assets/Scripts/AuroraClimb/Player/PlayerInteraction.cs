@@ -45,6 +45,12 @@ namespace AuroraClimb.Player
                 return;
             }
 
+            if (!interactable.CanInteract)
+            {
+                ClearCurrentTarget();
+                return;
+            }
+
             if (ReferenceEquals(interactable, currentInteractable)) return;
             
             ClearHighlightable();
