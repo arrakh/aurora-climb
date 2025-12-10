@@ -2,6 +2,7 @@ INCLUDE variables.ink
 
 === testpath ===
 Hi, I'm a box!
+-> choice
 
 = choice
 + a box?
