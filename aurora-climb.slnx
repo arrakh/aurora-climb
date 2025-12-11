@@ -1,6 +1,9 @@
 ﻿<Solution>
+  <Project Path="AllIn13DShaderAssemebly.Editor.csproj" />
   <Project Path="Ink-Libraries.csproj" />
+  <Project Path="AllIn13DShaderDemoScriptsAssembly.csproj" />
   <Project Path="InkEditor.csproj" />
+  <Project Path="AllIn13DShaderAssemebly.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
