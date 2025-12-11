@@ -7,7 +7,7 @@ namespace AuroraClimb.Player
 {
     public class PlayerInventory : MonoBehaviour
     {
-        [SerializeField] private int inventorySlotCount = 5;
+        [SerializeField] private int inventorySlotCount = 4;
 
         private List<ItemData> items = new();
 
@@ -16,6 +16,12 @@ namespace AuroraClimb.Player
         public int InventorySlotCount => inventorySlotCount;
 
         public IReadOnlyList<ItemData> Items => items;
+
+        public void AddSlotCount(int amount)
+        {
+            inventorySlotCount += amount;
+            OnInventoryUpdated?.Invoke();
+        }
 
         public bool HasItem(ItemData toCheck)
         {
@@ -29,6 +35,17 @@ namespace AuroraClimb.Player
             }
 
             return similarItemCount > 0;
+        }
+
+        public int GetItemCount(string id)
+        {
+            int total = 0;
+            
+            foreach (var item in items)
+                if (item.id.Equals(id, StringComparison.InvariantCultureIgnoreCase))
+                    total += item.amount;
+
+            return total;
         }
 
         public void AddItem(ItemData toAdd)

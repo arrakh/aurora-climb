@@ -9,7 +9,6 @@ namespace AuroraClimb.UI
     public class InventoryUI : MonoBehaviour
     {
         [SerializeField] private PlayerInventory playerInventory;
-        [SerializeField] private RectTransform holder;
         [SerializeField] private ItemSlot slotPrefab;
         [SerializeField] private RectTransform slotParent;
         [SerializeField] private TextMeshProUGUI descriptionText;
@@ -22,22 +21,14 @@ namespace AuroraClimb.UI
 
         private void OnEnable()
         {
-            holder.gameObject.SetActive(open);
             playerInventory.OnInventoryUpdated += Display;
+            descriptionText.text = $"<size=20%>\n\n</size><size=140%><b>Inventory</b></size>";
             Display();
         }
 
         private void OnDisable()
         {
             playerInventory.OnInventoryUpdated -= Display;
-        }
-
-        public void ToggleInventory()
-        {
-            open = !open;
-            holder.gameObject.SetActive(open);
-
-            if (open) descriptionText.text = "Hover over any item";
         }
 
         private void Display()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7821557295441346391}
   - component: {fileID: 9222891258918075194}
+  - component: {fileID: 6600464065366128676}
   m_Layer: 0
   m_Name: StoryController
   m_TagString: Untagged
@@ -46,6 +47,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Arr.Ink.InkStoryController
   textController: {fileID: 0}
   waitForContinueWhenStoryEnds: 0
+--- !u!114 &6600464065366128676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531468361568897826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d167d78e68db4c619867ce4b5f078d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.Controllers.StoryFunctionsController
+  inkStoryController: {fileID: 9222891258918075194}
+  globalFlags: {fileID: 1107332551308233844}
+  inventory: {fileID: 0}
 --- !u!1 &1973678838305976718
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +108,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.Controllers.GameController
   storyController: {fileID: 9222891258918075194}
   inkStoryJson: {fileID: 4900000, guid: 8580d923bd441d449bbec433de84a924, type: 3}
+--- !u!1 &7166396810700216656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770666047158553605}
+  - component: {fileID: 1107332551308233844}
+  m_Layer: 0
+  m_Name: GlobalFlagsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &770666047158553605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166396810700216656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3201657182323091748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1107332551308233844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166396810700216656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb706cc6196a44939a27bf2367c5625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.Controllers.GlobalFlagsController
 --- !u!1 &7542798875839474661
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,5 +183,6 @@ Transform:
   m_Children:
   - {fileID: 7821557295441346391}
   - {fileID: 4920457082157325885}
+  - {fileID: 770666047158553605}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

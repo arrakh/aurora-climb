@@ -1,4 +1,8 @@
 INCLUDE variables.ink
+INCLUDE functions.ink
+INCLUDE functest.ink
+
+
 
 === testpath ===
 Hi, I'm a box!

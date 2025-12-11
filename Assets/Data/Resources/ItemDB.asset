@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4342cc6655df4d459fab8149e81388fe, type: 3}
   m_Name: ItemDB
   m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.Items.ItemDatabase
-  items: []
+  items:
+  - {fileID: 11400000, guid: 0b7f77dddec18e54a93ca0ccdcfaa45d, type: 2}

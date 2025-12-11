@@ -41,6 +41,10 @@ namespace AuroraClimb.Player
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     break;
+                case PlayerState.Cutscene:
+                    canControlCamera = false;
+                    Cursor.visible = false;
+                    break;
             }
         }
 

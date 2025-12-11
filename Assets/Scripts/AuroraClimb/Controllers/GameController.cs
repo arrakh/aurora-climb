@@ -9,7 +9,7 @@ namespace AuroraClimb.Controllers
         [SerializeField] private InkStoryController storyController;
         [SerializeField] private TextAsset inkStoryJson;
 
-        private void Awake()
+        private void Start()
         {
             storyController.InitializeStory(inkStoryJson.text);
         }

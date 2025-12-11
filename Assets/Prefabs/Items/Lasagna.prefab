@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 6231232215282511823}
   - component: {fileID: 9132510500833830953}
   - component: {fileID: 944953836318145786}
+  - component: {fileID: 3159069212885625634}
   m_Layer: 0
   m_Name: Lasagna
   m_TagString: Untagged
@@ -171,6 +172,54 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.33, y: 0.3, z: 0.84}
   m_Center: {x: 0, y: -0.06, z: 0}
+--- !u!114 &3159069212885625634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844216912990208381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8a0ecb6b2f46f89acfb9723b031f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.Interactions.Implementations.TakeItemInteraction
+  item: {fileID: 11400000, guid: 0b7f77dddec18e54a93ca0ccdcfaa45d, type: 2}
+  itemAmount: 1
+  animDuration: 0.25
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.005659193
+      inSlope: 0.04223946
+      outSlope: 0.04223946
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.06285943
+    - serializedVersion: 3
+      time: 0.5119468
+      value: -0.24901944
+      inSlope: 3.8666422
+      outSlope: 3.8666422
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.03871182
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.06675567
+      outSlope: 0.06675567
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1378957
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8701033719652360000
 GameObject:
   m_ObjectHideFlags: 0

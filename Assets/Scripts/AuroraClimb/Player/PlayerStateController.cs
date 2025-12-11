@@ -6,7 +6,8 @@ namespace AuroraClimb.Player
     public enum PlayerState
     {
         FreeMovement,
-        InDialogue
+        InDialogue,
+        Cutscene
     }
     
     public class PlayerStateController : MonoBehaviour

@@ -51,7 +51,7 @@ namespace AuroraClimb.Player
                                    out hit, castDistance, layerMask, QueryTriggerInteraction.Ignore))
             {
                 float angle = Vector3.Angle(hit.normal, Vector3.up);
-                Debug.Log($"{hit.collider.name}: {angle} <= {maxGroundAngle}");
+                //Debug.Log($"{hit.collider.name}: {angle} <= {maxGroundAngle}");
                 return angle <= maxGroundAngle;
             }
 

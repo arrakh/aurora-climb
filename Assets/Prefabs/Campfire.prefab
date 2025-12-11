@@ -287,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5785105135144253389}
   - component: {fileID: 7678741608668344715}
+  - component: {fileID: 7896571140387483323}
   m_Layer: 0
   m_Name: Campfire
   m_TagString: Untagged
@@ -465,6 +466,27 @@ MonoBehaviour:
   fireFps: 30
   flickerSpeed: 3
   turnedOnAtStart: 1
+--- !u!65 &7896571140387483323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003337542570113548}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3559744601029776770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -529,10 +551,46 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8567575225748730911, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f11a16da83c68b24d8279c9c829ab0df, type: 2}
+    - target: {fileID: -7725849648092927055, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f11a16da83c68b24d8279c9c829ab0df, type: 2}
+    - target: {fileID: -6843414283980209126, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f11a16da83c68b24d8279c9c829ab0df, type: 2}
+    - target: {fileID: -4202972350091944525, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 01cd774b526310643ae2fdd8a104b731, type: 2}
     - target: {fileID: 919132149155446097, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
       propertyPath: m_Name
       value: Campfire
       objectReference: {fileID: 0}
+    - target: {fileID: 1718322108265126843, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f11a16da83c68b24d8279c9c829ab0df, type: 2}
+    - target: {fileID: 2903471012415661406, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f11a16da83c68b24d8279c9c829ab0df, type: 2}
+    - target: {fileID: 4271731682214355664, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f11a16da83c68b24d8279c9c829ab0df, type: 2}
+    - target: {fileID: 6179199756487613632, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f11a16da83c68b24d8279c9c829ab0df, type: 2}
+    - target: {fileID: 8789688765872139099, guid: 876476d9b993e0d46b6080d14de9c3f2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f11a16da83c68b24d8279c9c829ab0df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

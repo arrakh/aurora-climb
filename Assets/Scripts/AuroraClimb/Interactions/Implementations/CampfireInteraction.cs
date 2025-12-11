@@ -29,7 +29,7 @@ namespace AuroraClimb.Interactions.Implementations
             SetFireVisible(turnedOnAtStart);
         }
 
-        private void SetFireVisible(bool on)
+        public void SetFireVisible(bool on)
         {
             foreach (var rend in fireSpriteRenderers)
                 rend.gameObject.SetActive(on);

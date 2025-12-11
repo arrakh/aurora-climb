@@ -44,7 +44,7 @@ namespace AuroraClimb.Player
             switch (state)
             {
                 case PlayerState.FreeMovement: canMove = true; break;
-                case PlayerState.InDialogue: canMove = false; break;
+                case PlayerState.InDialogue or PlayerState.Cutscene: canMove = false; break;
             }
         }
 
