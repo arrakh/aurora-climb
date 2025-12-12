@@ -12,14 +12,20 @@ namespace AuroraClimb.Player
         [SerializeField] private PlayerStateController stateController;
 
         private float pitch;
+        private float yaw;
         private bool canControlCamera = true;
+        private Vector3 desiredEulerRotation;
+
+        public Vector3 DesiredEulerRotation => desiredEulerRotation;
+
+        public Camera Camera => cam;
 
         private void Start()
         {
             stateController.OnStateChanged += OnStateChanged;
+            desiredEulerRotation = playerBody.rotation.eulerAngles;
             
             if (cam == null) cam = Camera.main;
-            if (playerBody == null) playerBody = transform;
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -58,12 +64,15 @@ namespace AuroraClimb.Player
             float mouseX = Input.GetAxis("Mouse X") * lookSpeed.x * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * lookSpeed.y * Time.deltaTime;
 
-            playerBody.Rotate(Vector3.up * mouseX);
+            //playerBody.Rotate(Vector3.up * mouseX);
+            desiredEulerRotation.x += mouseX;
 
             pitch -= mouseY;
             pitch = Mathf.Clamp(pitch, pitchClamp.x, pitchClamp.y);
 
-            cam.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+            yaw += mouseX;
+
+            cam.transform.localRotation = Quaternion.Euler(pitch, yaw, 0f);
         }
     }
 

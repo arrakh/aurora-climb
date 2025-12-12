@@ -20,16 +20,18 @@ namespace AuroraClimb.Player
         [SerializeField] private PlayerHand leftHand, rightHand;
         [SerializeField] private float climbProbeDistance = 2f;
         [SerializeField] private LayerMask climbMask;
+
+        private Camera camera;
         
         private Vector3 lastMovement;
         private Vector3 externalVelocity;
         private bool canMove = true;
         private bool isRunning = false;
-
         private bool isJumpQueued = false;
 
         private void Start()
         {
+            camera = Camera.main;
             stateController.OnStateChanged += OnStateChanged;
             groundCheck.OnGroundTouched += OnGroundTouched;
         }
@@ -69,8 +71,8 @@ namespace AuroraClimb.Player
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
 
-            Vector3 forward = playerBody.forward;
-            Vector3 right   = playerBody.right;
+            Vector3 forward = camera.transform.forward;
+            Vector3 right   = camera.transform.right;
 
             forward.y = 0f;
             right.y = 0f;
@@ -81,9 +83,6 @@ namespace AuroraClimb.Player
             if (moveDir.sqrMagnitude > 1f) moveDir.Normalize();
 
             lastMovement = moveDir;
-
-            //transform.position += lastMovement * (baseSpeed * Time.deltaTime);
-            
         }
 
         public void AddExternalVelocity(Vector3 velocity)
