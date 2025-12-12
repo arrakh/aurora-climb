@@ -60,13 +60,17 @@ namespace AuroraClimb.Player
         
         private void FixedUpdate()
         {
+            //return;
             if (!isGrabbing) return;
 
             var pullDirection = (latestHit.point - pullPoint.position) * pullStrength;
             movement.AddExternalVelocity(pullDirection);
             
-            Debug.Log($"{name} | PULLING VECTOR {pullDirection} TOWARDS {latestHit.collider.name}");
+            //Debug.Log($"{name} | PULLING VECTOR {pullDirection} TOWARDS {latestHit.collider.name}");
         }
+
+        public Vector3 GetPullDirection()
+            => (latestHit.point - pullPoint.position) * pullStrength;
 
         private void Update()
         {
