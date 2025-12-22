@@ -60,7 +60,7 @@ namespace AuroraClimb.Player
         
         private void FixedUpdate()
         {
-            //return;
+            return;
             if (!isGrabbing) return;
 
             var pullDirection = (latestHit.point - pullPoint.position) * pullStrength;

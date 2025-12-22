@@ -134,6 +134,17 @@ namespace AuroraClimb.Player
             rb.linearVelocity = new Vector3(horizontal.x, vertical, horizontal.z);
         }
 
+        private Vector3 GetHandsNormal()
+        {
+            if (leftHand.IsGrabbing && rightHand.IsGrabbing)
+                return (leftHand.Hit.normal + rightHand.Hit.normal).normalized;
+            
+            if (leftHand.IsGrabbing) return leftHand.Hit.normal.normalized;
+            if (rightHand.IsGrabbing) return rightHand.Hit.normal.normalized;
+            
+            return Vector3.zero;
+        }
+
         private void ConsumeJumpStamina()
         {
             if (leftHand.IsGrabbing && rightHand.IsGrabbing)
@@ -147,17 +158,6 @@ namespace AuroraClimb.Player
             
             leftHand.Release();
             rightHand.Release();
-        }
-
-        private Vector3 GetHandsNormal()
-        {
-            if (leftHand.IsGrabbing && rightHand.IsGrabbing)
-                return (leftHand.Hit.normal + rightHand.Hit.normal).normalized;
-            
-            if (leftHand.IsGrabbing) return leftHand.Hit.normal.normalized;
-            if (rightHand.IsGrabbing) return rightHand.Hit.normal.normalized;
-            
-            return Vector3.zero;
         }
 
         private bool IsClimbing()
