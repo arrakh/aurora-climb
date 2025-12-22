@@ -1,11 +1,14 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace AuroraClimb.UI
 {
     public class PauseUI : MonoBehaviour
     {
         [SerializeField] private RectTransform holder;
+        [SerializeField] private Button quitButton;
         
         private bool isPaused = false;
         
@@ -13,6 +16,11 @@ namespace AuroraClimb.UI
         {
             isPaused = !isPaused;
             SetEnabled(isPaused);
+        }
+
+        public void Quit()
+        {
+            SceneManager.LoadScene("Menu");
         }
 
         private void SetEnabled(bool on)

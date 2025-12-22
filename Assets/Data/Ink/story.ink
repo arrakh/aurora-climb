@@ -79,7 +79,7 @@ You will keep coming back to me, but your questions won’t have answers
 === npc6 ===
 You are the biggest loser. Everyone is happy without you.
 + But I still have myself
-    You have lost everything else. You are alone.
+    You have lost everything else. You are alone. -> END
 + But my work matters
     For who? Your work won’t pay you back.
 You are nobody without love. No one will save you. -> END

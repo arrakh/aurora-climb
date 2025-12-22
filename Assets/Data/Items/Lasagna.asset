@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lasagna
   m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.Items.ItemDefinition
   id: lasagna
-  displayName: Lasagna
-  description: Mmm delicious... wait how did it get here?
+  displayName: Food
+  description: Smell of spices, empty dishes in the sink
   icon: {fileID: 21300000, guid: fc829d1051dcabf4785bbc7f6b94483d, type: 3}

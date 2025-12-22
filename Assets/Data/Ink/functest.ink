@@ -1,4 +1,4 @@
-// Single entry point for the climbing/lasagna test.
+|// Single entry point for the climbing/lasagna test.
 === aurora_lasagna_test ===
 
 The cliff is a vertical sheet of frozen midnight.

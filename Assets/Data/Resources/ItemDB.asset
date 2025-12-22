@@ -13,4 +13,11 @@ MonoBehaviour:
   m_Name: ItemDB
   m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.Items.ItemDatabase
   items:
+  - {fileID: 11400000, guid: b1bc140a98f9ed948b0a2270215e26a2, type: 2}
+  - {fileID: 11400000, guid: da72f7ac5afad2347ba903860711a06f, type: 2}
+  - {fileID: 11400000, guid: 195b8b760d901a14cb7c79dacefd0c87, type: 2}
+  - {fileID: 11400000, guid: b572c94e8a778624ab2066fb4c6223c8, type: 2}
+  - {fileID: 11400000, guid: 78a42d23119019940a67cc117f598f44, type: 2}
+  - {fileID: 11400000, guid: cadbd26f2ce51454eb26e7d95527e314, type: 2}
+  - {fileID: 11400000, guid: cbe88af16a95ba3468dad264de8975a2, type: 2}
   - {fileID: 11400000, guid: 0b7f77dddec18e54a93ca0ccdcfaa45d, type: 2}

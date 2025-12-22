@@ -1029,6 +1029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.UI.PauseUI
   holder: {fileID: 6347274746079618825}
+  quitButton: {fileID: 3921187647900488882}
 --- !u!1 &8997441401372667271
 GameObject:
   m_ObjectHideFlags: 0
