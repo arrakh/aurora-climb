@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{41c5154e-2eb8-4d79-a3b4-69618f2f2c78}">
+		<property name="assetPath">
+			<value>MENU THEME v3.ogg.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>74.784000000000006</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8d0adcc5-c195-4783-b115-59f4f117535b}</destination>
+		</relationship>
+	</object>
+</objects>
