@@ -159,7 +159,11 @@ namespace AuroraClimb.Player
 
         public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)
         {
-            if (!canMove) return; 
+            if (!canMove)
+            {
+                currentVelocity = Vector3.zero;
+                return;
+            }
             
             var isClimbing = IsClimbing();
             var isGrounded = motor.GroundingStatus.IsStableOnGround;
