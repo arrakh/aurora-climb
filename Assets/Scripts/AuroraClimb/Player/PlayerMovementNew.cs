@@ -102,10 +102,10 @@ namespace AuroraClimb.Player
             currentRotation = Quaternion.LookRotation(forward);
         }
         
-        public void AddMaxStamina(float amount)
+        public void AddStaminaDuration(float amount)
         {
-            leftHand.AddMaxStamina(amount);
-            rightHand.AddMaxStamina(amount);
+            leftHand.AddStaminaDuration(amount);
+            rightHand.AddStaminaDuration(amount);
         }
 
         /*public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)

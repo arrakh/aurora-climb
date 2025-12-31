@@ -49,8 +49,8 @@ namespace AuroraClimb.Player
             }
             
             inventory.TryRemoveItem(item);
-            var totalStamina = def.StaminaGainWhenBurned * item.amount;
-            movement.AddMaxStamina(totalStamina);
+            var totalStamina = def.StaminaDurationGainWhenBurned * item.amount;
+            movement.AddStaminaDuration(totalStamina);
             globalFlagsController.AddFlag($"{HAS_BURNED}-{item.id}");
             stateController.SetIsInDialogue(false);
         }

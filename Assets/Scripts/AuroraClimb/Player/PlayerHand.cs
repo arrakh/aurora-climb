@@ -28,6 +28,7 @@ namespace AuroraClimb.Player
 
         public event Action OnMaxStaminaUpdate;
         
+        public float StaminaDrainDuration => staminaDrainDuration;
         public float Stamina => currentStamina;
         public float MaxStamina => maxStamina;
         public bool IsGrabbing => isGrabbing;
@@ -56,9 +57,9 @@ namespace AuroraClimb.Player
             currentGrabCooldown = grabCooldown;
         }
 
-        public void AddMaxStamina(float amount)
+        public void AddStaminaDuration(float amount)
         {
-            maxStamina += amount;
+            staminaDrainDuration += amount;
             OnMaxStaminaUpdate?.Invoke();
         }
 
