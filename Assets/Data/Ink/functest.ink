@@ -23,7 +23,7 @@ You glance at an invisible UI panel only you can see.
 YOU: "Apparently I'm holding {GetInventoryCount()} item(s),
 and the universe bothers to track {GetTotalItemCount()} item(s) in total."
 
-{HasItem("lasagna"):
+{HasGlobalFlag("hasBurned-camera"):
     The comforting weight of lasagna presses against your pack.
 - else:
     Your pack contains zero lasagnas. This feels like a design oversight.
