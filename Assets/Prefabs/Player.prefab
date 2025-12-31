@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 2325823368314835521}
   - component: {fileID: 2243827434931194889}
   - component: {fileID: 1006623711583633239}
+  - component: {fileID: 3377711340962229479}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -334,6 +335,23 @@ MonoBehaviour:
   CheckMovementInitialOverlaps: 1
   KillVelocityWhenExceedMaxMovementIterations: 1
   KillRemainingMovementWhenExceedMaxMovementIterations: 1
+--- !u!114 &3377711340962229479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815021721585393768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ace13f1a01b49af8321cc3c1fe39c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AuroraClimb.Player.PlayerBurnItem
+  inventoryPromptUi: {fileID: 0}
+  inventory: {fileID: 2243827434931194889}
+  stateController: {fileID: 1580612650072771336}
+  movement: {fileID: 3460668357719879542}
+  globalFlagsController: {fileID: 0}
 --- !u!1 &5025324015425986340
 GameObject:
   m_ObjectHideFlags: 0

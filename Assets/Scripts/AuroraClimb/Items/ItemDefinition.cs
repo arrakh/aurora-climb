@@ -9,6 +9,8 @@ namespace AuroraClimb.Items
         [SerializeField] private string displayName;
         [SerializeField] private string description;
         [SerializeField] private Sprite icon;
+        [SerializeField] private bool canBeBurned = true;
+        [SerializeField] private float staminaGainWhenBurned = 0.2f;
 
         public Sprite Icon => icon;
 
@@ -17,5 +19,9 @@ namespace AuroraClimb.Items
         public string DisplayName => displayName;
 
         public string ID => id;
+        
+        public bool CanBeBurned => canBeBurned;
+
+        public float StaminaGainWhenBurned => staminaGainWhenBurned;
     }
 }

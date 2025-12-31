@@ -15,6 +15,7 @@ namespace AuroraClimb.Player
 
         [Header("Design")]
         [SerializeField] private float pullStrength = 5f;
+        [SerializeField] private float maxStamina = 1f;
         [SerializeField] private float staminaDrainDuration = 5f;
         [SerializeField] private float staminaRecoveryDuration = 8f;
         [SerializeField] private float grabStaminaConsumption = 0.2f;
@@ -25,7 +26,10 @@ namespace AuroraClimb.Player
         [SerializeField] private AnimationCurve shakeIntensityCurve;
         [SerializeField] private float shakeStrength = 0.8f;
 
+        public event Action OnMaxStaminaUpdate;
+        
         public float Stamina => currentStamina;
+        public float MaxStamina => maxStamina;
         public bool IsGrabbing => isGrabbing;
 
         public RaycastHit Hit => latestHit;
@@ -38,6 +42,11 @@ namespace AuroraClimb.Player
 
         private RaycastHit latestHit;
 
+        private void Awake()
+        {
+            currentStamina = maxStamina;
+        }
+
         public void Grab(RaycastHit grabTarget)
         {
             if (currentGrabCooldown > 0f) return;
@@ -47,10 +56,16 @@ namespace AuroraClimb.Player
             currentGrabCooldown = grabCooldown;
         }
 
+        public void AddMaxStamina(float amount)
+        {
+            maxStamina += amount;
+            OnMaxStaminaUpdate?.Invoke();
+        }
+
         public void ConsumeStamina(float amount)
         {
             currentStamina -= amount;
-            currentStamina = Mathf.Clamp01(currentStamina);
+            currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
         }
 
         public void Release()
@@ -106,7 +121,7 @@ namespace AuroraClimb.Player
             if (isGrabbing) currentStamina -= Time.deltaTime / staminaDrainDuration;
             else currentStamina += Time.deltaTime / staminaRecoveryDuration;
 
-            currentStamina = Mathf.Clamp01(currentStamina);
+            currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
             
             if (currentStamina == 0f) Release();
         }

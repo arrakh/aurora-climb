@@ -1,4 +1,6 @@
 ﻿using System;
+using AuroraClimb.Player;
+using AuroraClimb.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,10 +19,18 @@ namespace AuroraClimb.Interactions.Implementations
         private float animTime;
         private float noiseProgress;
         private float targetIntensity;
-        private bool isAnimating = false;
+        private bool isFireLit = false;
 
-        public bool CanInteract { get; private set; }
-        public string InteractLabel => "Light Up";
+        private PlayerBurnItem burnItem = null;
+
+        public bool CanInteract { get; private set; } = true;
+        public string InteractLabel => GetInteractionLabel();
+
+        private string GetInteractionLabel()
+        {
+            if (!isFireLit) return "Light Up";
+            return "Burn Item";
+        }
 
         private void Start()
         {
@@ -34,14 +44,13 @@ namespace AuroraClimb.Interactions.Implementations
             foreach (var rend in fireSpriteRenderers)
                 rend.gameObject.SetActive(on);
 
-            isAnimating = on;
-            CanInteract = !on;
+            isFireLit = on;
             fireLight.enabled = on;
         }
 
         private void Update()
         {
-            if (isAnimating) AnimateFireUpdate();
+            if (isFireLit) AnimateFireUpdate();
         }
 
         private void AnimateFireUpdate()
@@ -73,7 +82,10 @@ namespace AuroraClimb.Interactions.Implementations
 
         public void OnInteract(GameObject instigator)
         {
-            SetFireVisible(true);
+            burnItem = instigator.GetComponent<PlayerBurnItem>();
+            
+            if (!isFireLit) SetFireVisible(true);
+            else if (burnItem != null) burnItem.PromptBurnItem();
         }
     }
 }

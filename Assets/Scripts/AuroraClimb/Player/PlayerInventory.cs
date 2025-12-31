@@ -82,23 +82,32 @@ namespace AuroraClimb.Player
         {
             var ignore = StringComparison.InvariantCultureIgnoreCase;
 
+            int needed = toRemove.amount;
+
+            int total = 0;
             for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].id.Equals(toRemove.id, ignore))
+                    total += items[i].amount;
+            }
+
+            if (total < needed) return false;
+
+            for (int i = 0; i < items.Count && needed > 0; i++)
             {
                 var item = items[i];
                 if (!item.id.Equals(toRemove.id, ignore)) continue;
 
-                if (item.amount < toRemove.amount) return false; //not enough
-
-                int remaining = item.amount - toRemove.amount;
+                int take = Math.Min(item.amount, needed);
+                int remaining = item.amount - take;
+                needed -= take;
 
                 if (remaining > 0) items[i] = new ItemData(item.id, remaining);
-                else items.RemoveAt(i);
-
-                OnInventoryUpdated?.Invoke();
-                return true;
+                else items.RemoveAt(i); i--;
             }
 
-            return false; //cant find
+            OnInventoryUpdated?.Invoke();
+            return true;
         }
     }
 }
